@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Feedback Form</h1>
+
+    <form onsubmit="showMessage(event)">
+        <label>Course Name</label>
+        <input type="text" required>
+
+        <label>Faculty Name</label>
+        <input type="text" required>
+
+        <label>Student Name</label>
+        <input type="text" required>
+
+        <label>Register Number</label>
+        <input type="text" required>
+
+        <label>Department</label>
+        <input type="text" required>
+
+        <label>Rating</label>
+        <select required>
+            <option value="">Select Rating</option>
+            <option>5 - Excellent</option>
+            <option>4 - Very Good</option>
+            <option>3 - Good</option>
+            <option>2 - Average</option>
+            <option>1 - Poor</option>
+        </select>
+
+        <label>Feedback / Comments</label>
+        <textarea required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+
+        <div id="message"></div>
+    </form>
+</div>
+
+<script>
+function showMessage(event) {
+    event.preventDefault();
+    document.getElementById("message").innerHTML =
+        "Thank you for your valuable feedback!";
+}
+</script>
+
+</body>
+</html>
